@@ -142,7 +142,8 @@ body {
 /* Screen inner */
 .screen-inner {
   display:flex; flex-direction:column;
-  padding:24px 24px 32px; flex:1;
+  padding:24px 24px 40px; flex:1;
+  justify-content:center;
 }
 
 /* Hero block */
@@ -151,8 +152,14 @@ body {
   align-items:center; text-align:center;
   margin-bottom:24px; padding-top:8px;
 }
-.hero-icon {
-  width:80px; height:80px; border-radius:28px;
+/* Hero emoji big */
+.hero-emoji-big {
+  font-size:80px;
+  line-height:1;
+  margin-bottom:20px;
+  animation:obIconIn 0.5s cubic-bezier(0.34,1.4,0.64,1) both;
+  filter:drop-shadow(0 8px 24px rgba(107,47,255,0.4));
+}
   background:rgba(107,47,255,0.12);
   border:1px solid var(--border2);
   display:flex; align-items:center; justify-content:center;
@@ -223,7 +230,7 @@ body {
   background:var(--card); border:1px solid var(--border2);
   border-radius:20px; padding:16px;
 }
-.tcard-stars { font-size:15px; display:block; margin-bottom:8px; }
+.tcard-stars { font-size:14px; display:block; margin-bottom:10px; letter-spacing:4px; color:#f59e0b; }
 .tcard-quote {
   font-size:16px; color:var(--text2); line-height:1.55;
   font-style:italic; margin-bottom:12px;
@@ -285,7 +292,7 @@ body {
 /* Tono (s4) */
 .tone-block {
   background:var(--card); border:1px solid var(--border2);
-  border-radius:20px; padding:16px; margin-bottom:12px;
+  border-radius:20px; padding:16px; margin-bottom:16px;
 }
 .tone-title {
   font-size:16px; font-weight:600; color:var(--text1); margin-bottom:2px;
@@ -1210,9 +1217,7 @@ body {
   <!-- S0 — IDIOMA -->
   <div class="screen active" id="s0">
     <div class="screen-inner" style="justify-content:center;align-items:center;text-align:center;padding-top:80px;">
-      <div class="hero-icon" style="margin-bottom:24px;">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--primary-l)" stroke-width="1.5"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
+      <div class="hero-emoji-big">🔥</div>
       <div class="screen-title" style="margin-bottom:8px;">Choose your<br><em>language</em></div>
       <div class="screen-sub" style="margin-bottom:40px;">Elige tu idioma · Choose your language</div>
       <div style="display:flex;flex-direction:column;gap:12px;width:100%;">
@@ -1245,27 +1250,27 @@ body {
     </div>
     <div class="screen-inner">
       <div class="hero-block">
-        <div class="hero-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--primary-l)" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="var(--primary-l)" stroke-width="1.5" stroke-dasharray="2 1"/><circle cx="12" cy="12" r="2" fill="var(--primary-l)"/><line x1="12" y1="3" x2="12" y2="6" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/><line x1="21" y1="12" x2="18" y2="12" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="hero-emoji-big">⚡</div>
         <div class="screen-title" data-i18n="ob_welcome_title_full">Bienvenido a <em>Closer AI</em></div>
-        <div class="screen-sub" data-i18n="ob_welcome_sub">CloserAI que te dice exactamente qué responder para cerrar más ventas. Solo configuras una vez.</div>
+        <div class="screen-sub" data-i18n="ob_welcome_sub">Tu asistente de ventas personal. Escribe por ti, suena como tú.</div>
       </div>
       <div class="feat-list">
         <div class="feat-card">
-          <div class="feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="var(--primary-l)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="var(--primary-l)" stroke-width="1.5"/></svg></div>
+          <div class="feat-ico" style="font-size:24px">📸</div>
           <div>
             <div class="feat-title" data-i18n="ob_feat1_title">Sube el screenshot</div>
             <div class="feat-sub" data-i18n="ob_feat1_sub">CloserAI lee tu conversación y genera la respuesta perfecta</div>
           </div>
         </div>
         <div class="feat-card">
-          <div class="feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="var(--primary-l)" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <div class="feat-ico" style="font-size:24px">✍️</div>
           <div>
             <div class="feat-title" data-i18n="ob_feat2_title">Mejora tu respuesta</div>
             <div class="feat-sub" data-i18n="ob_feat2_sub">Escribe lo que quieres decir, CloserAI lo hace sonar increíble</div>
           </div>
         </div>
         <div class="feat-card">
-          <div class="feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 8 8 8 13a4 4 0 0 0 8 0c0-2-1-4-1-4s2 1 2 4a4 4 0 0 1-8 0C9 8 12 2 12 2z" stroke="var(--primary-l)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="15" r="1.5" fill="var(--primary-l)" opacity="0.6"/></svg></div>
+          <div class="feat-ico" style="font-size:24px">🔥</div>
           <div>
             <div class="feat-title" data-i18n="ob_feat3_title">Rastrea tus cierres</div>
             <div class="feat-sub" data-i18n="ob_feat3_sub">Score mensual, XP y racha para nunca perder el ritmo</div>
@@ -1285,9 +1290,9 @@ body {
     </div>
     <div class="screen-inner">
       <div class="hero-block">
-        <div class="hero-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="3" y="13" width="4" height="8" rx="1.5" fill="var(--primary-l)" opacity="0.5"/><rect x="10" y="8" width="4" height="13" rx="1.5" fill="var(--primary-l)" opacity="0.75"/><rect x="17" y="3" width="4" height="18" rx="1.5" fill="var(--primary-l)"/><path d="M3 6l5-3 5 4 5-4" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div class="hero-emoji-big">📈</div>
         <div class="screen-title" data-i18n="ob_proof_title_full">Vendedores que ya <em>cierran más</em></div>
-        <div class="screen-sub" data-i18n="ob_proof_sub">Resultados reales de personas como tú.</div>
+        <div class="screen-sub" >Vendedores reales.<br><span style="color:var(--text3)">Resultados que hablan.</span></div>
       </div>
       <div class="stat-card">
         <div class="stat-num">3x</div>
@@ -1298,29 +1303,40 @@ body {
       </div>
       <div class="tlist">
         <div class="tcard">
-          <span class="tcard-stars">⭐⭐⭐⭐⭐</span>
-          <div class="tcard-quote" data-i18n="ob_t1_quote">"Antes perdía clientes por no saber cómo responder. Ahora copio, pego y cierro. Así de simple."</div>
+          <div class="tcard-stars">★ ★ ★ ★ ★</div>
+          <div class="tcard-quote">"A veces sé lo que quiero decir pero no sé cómo decirlo bien. CloserAI lo escribe por mí y suena natural."</div>
           <div class="tcard-row">
-            <div class="tcard-av" style="background:rgba(107,47,255,0.15);">👩</div>
+            <div class="tcard-av" style="background:linear-gradient(135deg,#C084FC,#7C3AED);color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;">V</div>
             <div>
               <div class="tcard-name">Valentina R.</div>
-              <div class="tcard-role" data-i18n="ob_t1_role">Tienda de ropa · Instagram</div>
+              <div class="tcard-role">Tienda de ropa · Instagram</div>
             </div>
           </div>
         </div>
         <div class="tcard">
-          <span class="tcard-stars">⭐⭐⭐⭐⭐</span>
-          <div class="tcard-quote" data-i18n="ob_t2_quote">"Mi equipo lo usa todos los días. Solo los follow-ups ya valen la suscripción."</div>
+          <div class="tcard-stars">★ ★ ★ ★ ★</div>
+          <div class="tcard-quote">"Atiendo como 30 clientes al día por WhatsApp. Antes me demoraba un montón en cada uno. Ahora voy rapidísimo."</div>
           <div class="tcard-row">
-            <div class="tcard-av" style="background:rgba(107,47,255,0.1);">👨</div>
+            <div class="tcard-av" style="background:linear-gradient(135deg,#818CF8,#4F46E5);color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;">A</div>
             <div>
               <div class="tcard-name">Andrés M.</div>
-              <div class="tcard-role" data-i18n="ob_t2_role">Agencia de marketing · WhatsApp</div>
+              <div class="tcard-role">Agencia de ventas · WhatsApp</div>
+            </div>
+          </div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-stars">★ ★ ★ ★ ★</div>
+          <div class="tcard-quote">"Lo que más me gusta es que mis respuestas suenan como yo, no como un robot. Mis clientes ni se dan cuenta."</div>
+          <div class="tcard-row">
+            <div class="tcard-av" style="background:linear-gradient(135deg,#34D399,#059669);color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;">C</div>
+            <div>
+              <div class="tcard-name">Camila P.</div>
+              <div class="tcard-role">Servicios digitales · Instagram</div>
             </div>
           </div>
         </div>
       </div>
-      <button class="btn" onclick="obGo(3)" data-i18n="ob_proof_btn">Quiero esto para mí →</button>
+      <button class="btn" onclick="obGo(3)" data-i18n="ob_proof_btn">Continuar →</button>
     </div>
   </div>
 
@@ -1333,19 +1349,19 @@ body {
     </div>
     <div class="screen-inner">
       <div class="hero-block">
-        <div class="hero-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="3" stroke="var(--primary-l)" stroke-width="1.5"/><path d="M16 7V5a4 4 0 0 0-8 0v2" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="12" x2="12" y2="16" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="14" x2="14" y2="14" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="hero-emoji-big">✨</div>
         <div class="screen-title" data-i18n="ob_product_title_full">Tu <em>producto</em>, una vez</div>
         <div class="screen-sub" data-i18n="ob_product_sub">CloserAI usa esta info en cada respuesta. Solo lo configuras hoy.</div>
       </div>
       <div class="once-card">
         <div class="once-ico">✅</div>
         <div>
-          <div class="once-title" data-i18n="prod_once_t">Configuración única</div>
-          <div class="once-sub" data-i18n="prod_once_s">Queda guardado para siempre. Edítalo en ajustes cuando quieras.</div>
+          <div class="once-title" data-i18n="prod_once_t">Solo una vez</div>
+          <div class="once-sub" data-i18n="prod_once_s">Queda guardado. Puedes editarlo cuando quieras desde Perfil.</div>
         </div>
       </div>
       <div class="textarea-card">
-        <textarea class="product-ta" data-i18n-attr="placeholder" data-i18n="prod_desc_placeholder" placeholder="Ej: Vendo cursos de fotografía por $297..."></textarea>
+        <textarea class="product-ta" data-i18n-attr="placeholder" data-i18n="prod_desc_placeholder" placeholder="Sube fotos, comparte tus redes o escribe aquí. CloserAI usará este contexto para personalizar cada respuesta."></textarea>
         <div class="attach-row">
           <div class="attach-btn">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
@@ -1379,58 +1395,38 @@ body {
     </div>
     <div class="screen-inner">
       <div class="hero-block">
-        <div class="hero-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="9" y="2" width="6" height="11" rx="3" stroke="var(--primary-l)" stroke-width="1.5"/><path d="M5 11a7 7 0 0 0 14 0" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="18" x2="12" y2="22" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="22" x2="16" y2="22" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="hero-emoji-big">💬</div>
         <div class="screen-title" data-i18n="ob_tone_title_full">¿Cómo quieres <em>sonar?</em></div>
         <div class="screen-sub" data-i18n="ob_tone_sub">Tu tono personal. Puedes cambiarlo en ajustes cuando quieras.</div>
       </div>
-      <div class="tone-block">
-        <div class="tone-title" data-i18n="tone_styles_title">Tonalidad del mensaje</div>
-        <div class="tone-sub" data-i18n="tone_define">Define el estilo y los emojis que usa CloserAI</div>
-        <div class="slider-card">
-          <div class="slider-labels">
-            <div class="slider-lbl" id="lf" data-i18n="tone_fem">Femenino</div>
-            <div class="slider-lbl on" id="ln" data-i18n="tone_neu">Neutral</div>
-            <div class="slider-lbl" id="lm" data-i18n="tone_mas">Masculino</div>
-          </div>
-          <div class="track" id="track" onclick="trackClick(event)">
-            <div class="track-fill" id="fill"></div>
-            <div class="track-thumb" id="thumb"></div>
-          </div>
-          <div class="slider-current" id="cur">Neutral</div>
+      <div class="tone-slider-wrap" style="margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:600;color:var(--text1);margin-bottom:4px;">Tonalidad</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Define cómo suena CloserAI contigo</div>
+        <div class="ts-labels">
+          <span class="ts-lbl" id="lf">Femenino</span>
+          <span class="ts-lbl active" id="ln">Neutral</span>
+          <span class="ts-lbl" id="lm">Masculino</span>
+        </div>
+        <div class="ts-track" id="track" onclick="trackClick(event)">
+          <div class="ts-fill" id="fill"></div>
+          <div class="ts-thumb" id="thumb"></div>
+        </div>
+        <div class="ts-cur" id="cur">Neutral</div>
+      </div>
+      <div class="tone-slider-wrap">
+        <div style="font-size:13px;font-weight:600;color:var(--text1);margin-bottom:4px;">Estilo</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:10px;">Elige hasta 3 que te representen</div>
+
+        <div class="ts-grid" style="margin-top:8px;">
+          <div class="ts-btn on" data-s="Amigable" onclick="toggleS(this)"><div class="ts-chk">✓</div><div class="ts-nm">😊 Amigable</div></div>
+          <div class="ts-btn" data-s="Profesional" onclick="toggleS(this)"><div class="ts-chk">✓</div><div class="ts-nm">💼 Profesional</div></div>
+          <div class="ts-btn" data-s="Directo" onclick="toggleS(this)"><div class="ts-chk">✓</div><div class="ts-nm">🎯 Directo</div></div>
+          <div class="ts-btn" data-s="Divertido" onclick="toggleS(this)"><div class="ts-chk">✓</div><div class="ts-nm">😄 Divertido</div></div>
+          <div class="ts-btn" data-s="Carismático" onclick="toggleS(this)"><div class="ts-chk">✓</div><div class="ts-nm">✨ Carismático</div></div>
+          <div class="ts-btn" data-s="Empático" onclick="toggleS(this)"><div class="ts-chk">✓</div><div class="ts-nm">🤝 Empático</div></div>
         </div>
       </div>
-      <div class="tone-block">
-        <div class="tone-title" data-i18n="tone_styles_title">Estilo de comunicación</div>
-        <div class="tone-sub" data-i18n="tone_styles_sub">Elige hasta 3 estilos</div>
-        <div class="style-count" data-i18n-before="tone_selected">Seleccionados: <span id="sc">1</span>/3</div>
-        <div class="style-grid">
-          <div class="style-card on" data-s="Amigable" onclick="toggleS(this)">
-            <div class="style-check">✓</div>
-            <div class="style-name">😊 Amigable</div>
-          </div>
-          <div class="style-card" data-s="Profesional" onclick="toggleS(this)">
-            <div class="style-check">✓</div>
-            <div class="style-name">💼 Profesional</div>
-          </div>
-          <div class="style-card" data-s="Directo" onclick="toggleS(this)">
-            <div class="style-check">✓</div>
-            <div class="style-name">🎯 Directo</div>
-          </div>
-          <div class="style-card" data-s="Divertido" onclick="toggleS(this)">
-            <div class="style-check">✓</div>
-            <div class="style-name">😄 Divertido</div>
-          </div>
-          <div class="style-card" data-s="Carismático" onclick="toggleS(this)">
-            <div class="style-check">✓</div>
-            <div class="style-name">✨ Carismático</div>
-          </div>
-          <div class="style-card" data-s="Empático" onclick="toggleS(this)">
-            <div class="style-check">✓</div>
-            <div class="style-name">🤝 Empático</div>
-          </div>
-        </div>
-      </div>
-      <button class="btn" onclick="obGo(5)" data-i18n="ob_tone_btn">Todo listo →</button>
+      <button class="btn" onclick="obGo(5)" data-i18n="ob_tone_btn" style="margin-top:60px;">Todo listo →</button>
     </div>
   </div>
 
@@ -1443,41 +1439,41 @@ body {
     </div>
     <div class="screen-inner">
       <div class="hero-block">
-        <div class="hero-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 17 6 17 12v2l2 3H5l2-3v-2C7 6 12 2 12 2z" stroke="var(--primary-l)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="11" r="2" fill="var(--primary-l)" opacity="0.5"/><path d="M9 21c0-1.7 1.3-3 3-3s3 1.3 3 3" stroke="var(--primary-l)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="hero-emoji-big">🚀</div>
         <div class="screen-title" data-i18n="ob_ready_title_full">¡Estás <em>listo</em> para cerrar!</div>
-        <div class="screen-sub" data-i18n="ob_ready_sub">Configuración guardada. CloserAI ya conoce tu producto y tu estilo.</div>
+        <div class="screen-sub" data-i18n="ob_ready_sub">Todo configurado. CloserAI ya sabe cómo eres y qué vendes.</div>
       </div>
       <div class="check-list">
         <div class="check-row">
           <div class="check-circle">✓</div>
           <div>
-            <div class="check-label" data-i18n="ob_check1_title">Producto configurado</div>
-            <div class="check-sub" data-i18n="ob_check1_sub">CloserAI conoce tu oferta, precios y objeciones</div>
+            <div class="check-label" data-i18n="ob_check1_title">Producto listo</div>
+            <div class="check-sub" data-i18n="ob_check1_sub">CloserAI sabe exactamente qué ofrecer y cómo</div>
           </div>
         </div>
         <div class="check-row">
           <div class="check-circle">✓</div>
           <div>
-            <div class="check-label" data-i18n="ob_check2_title">Tono personalizado</div>
-            <div class="check-sub" data-i18n="ob_check2_sub">Cada respuesta sonará exactamente como tú</div>
+            <div class="check-label" data-i18n="ob_check2_title">Tu voz, tu estilo</div>
+            <div class="check-sub" data-i18n="ob_check2_sub">Cada respuesta suena auténtica. Como tú en tu mejor día.</div>
           </div>
         </div>
         <div class="check-row">
           <div class="check-circle">✓</div>
           <div>
-            <div class="check-label" data-i18n="ob_check3_title">Score del mes activo</div>
-            <div class="check-sub" data-i18n="ob_check3_sub">Empieza a registrar tus cierres hoy</div>
+            <div class="check-label" data-i18n="ob_check3_title">Listo para cerrar</div>
+            <div class="check-sub" data-i18n="ob_check3_sub">Tu score empieza en cero. Hoy lo cambias.</div>
           </div>
         </div>
       </div>
       <div class="trial-card">
         <div class="trial-ico">🎁</div>
         <div>
-          <div class="trial-title" data-i18n="ob_trial_title">7 días gratis incluidos</div>
+          <div class="trial-title" data-i18n="ob_trial_title">7 días gratis. Sin compromisos.</div>
           <div class="trial-sub" data-i18n="ob_trial_sub">Sin tarjeta de crédito · Cancela cuando quieras</div>
         </div>
       </div>
-      <button class="btn" onclick="launchApp()" data-i18n="ob_ready_btn">Empezar a cerrar →</button>
+      <button class="btn" onclick="launchApp()" data-i18n="ob_ready_btn">Abrir CloserAI →</button>
     </div>
   </div>
 
@@ -1658,6 +1654,9 @@ body {
   </div>
 
   <!-- TONE EDIT MODAL -->
+
+  </div><!-- close .inner -->
+
   <div class="modal-overlay" id="toneModal" onclick="if(event.target===this)closeToneModal()">
     <div class="meta-box">
       <div class="modal-title" data-i18n="tone_modal_title">¿Cómo quieres sonar? 🎤</div>
@@ -1694,9 +1693,6 @@ body {
       <button class="modal-cancel" onclick="closeToneModal()" data-i18n="tone_cancel">Cancelar</button>
     </div>
   </div>
-
-
-  </div><!-- close .inner -->
 <!-- NAVBAR -->
   <div class="nav">
     <div class="ni act" id="nav-inicio" onclick="showTab('inicio')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gi" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M10.707 2.293a1 1 0 0 1 1.414 0l7 7 2 2a1 1 0 0 1-1.414 1.414L20 12.414V20a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4h-4v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7.586l-.707.707A1 1 0 0 1 1.879 11.707l2-2 7-7z" fill="url(#gi)"/></svg></div></div>
@@ -1723,7 +1719,7 @@ body {
 
       <div class="prod-section-label" data-i18n="prod_desc_label">Descripción del producto</div>
       <div class="textarea-card2">
-        <textarea class="prod-ta" style="height:220px" placeholder="Describe tu producto, precio, cliente ideal, objeciones comunes y tu diferencial...">Vendo cursos de fotografía online por $297. Mi cliente ideal tiene 25–40 años y quiere emprender. La objeción más común es el precio. Mi diferencial es mentoría grupal incluida.</textarea>
+        <textarea class="prod-ta" style="height:220px" placeholder="Sube fotos, comparte tus redes o escribe aquí. CloserAI usará este contexto para personalizar cada respuesta." placeholder="Sube fotos, comparte tus redes o escribe aquí. CloserAI usará este contexto para personalizar cada respuesta." placeholder="Sube fotos, comparte tus redes o escribe aquí. CloserAI usará este contexto para personalizar cada respuesta."></textarea>
       </div>
 
       <div class="prod-section-label" data-i18n="prod_files_label">Archivos de referencia</div>
@@ -1877,6 +1873,10 @@ body {
       </div>
 
       <button class="logout-btn" data-i18n="perfil_logout">Cerrar sesión</button>
+
+      <button onclick="localStorage.clear(); location.reload();" style="width:100%; background:rgba(107,47,255,0.1); border:1px solid var(--border2); border-radius:18px; padding:15px; font-family:'Nunito',sans-serif; font-size:15px; font-weight:500; color:var(--primary-l); cursor:pointer; margin-top:10px; transition:all 0.18s;" onmouseover="this.style.background='rgba(107,47,255,0.18)'" onmouseout="this.style.background='rgba(107,47,255,0.1)'">
+        🔁 Ver onboarding
+      </button>
     </div>
 
   </div>
@@ -1935,7 +1935,7 @@ function obBack() {
   var out = document.getElementById('s'+obCur);
   out.classList.remove('active','enter','back-enter');
   out.style.display = 'none';
-  cur = obHist.pop();
+  obCur = obHist.pop();
   var inn = document.getElementById('s'+obCur);
   inn.style.display = 'flex';
   void inn.offsetWidth;
@@ -1999,27 +1999,27 @@ var T = {
   es: {
     // Onboarding
     ob_welcome_title: 'Bienvenido a',
-    ob_welcome_sub: 'CloserAI que te dice exactamente qué responder para cerrar más ventas. Solo configuras una vez.',
-    ob_start_btn: 'Empieza gratis →',
-    ob_feat1_title: 'Sube el screenshot',
-    ob_feat1_sub: 'CloserAI lee tu conversación y genera la respuesta perfecta',
-    ob_feat2_title: 'Mejora tu respuesta',
-    ob_feat2_sub: 'Escribe lo que quieres decir, CloserAI lo hace sonar increíble',
-    ob_feat3_title: 'Rastrea tus cierres',
-    ob_feat3_sub: 'Score mensual, XP y racha para nunca perder el ritmo',
+    ob_welcome_sub: 'Tu asistente de ventas personal. Escribe por ti, suena como tú.',
+    ob_start_btn: 'Empezar →',
+    ob_feat1_title: 'Lee la conversación',
+    ob_feat1_sub: 'Sube el screenshot. CloserAI entiende el contexto y te dice qué responder.',
+    ob_feat2_title: 'Mejora tu mensaje',
+    ob_feat2_sub: 'Tienes la idea. CloserAI la pule y la hace sonar irresistible.',
+    ob_feat3_title: 'Sigue tu ritmo',
+    ob_feat3_sub: 'XP, racha y score mensual. Cada cierre cuenta.',
     ob_proof_title: 'Vendedores que ya cierran más',
-    ob_proof_sub: 'Resultados reales de personas como tú.',
-    ob_proof_btn: 'Quiero esto para mí →',
+    ob_proof_sub: 'Vendedores reales.<br>Resultados que hablan.',
+    ob_proof_btn: 'Continuar →',
     ob_product_title: 'Tu producto, una vez',
-    ob_product_sub: 'CloserAI usa esta info en cada respuesta. Solo lo configuras hoy.',
+    ob_product_sub: 'Cuéntanos qué vendes. CloserAI aprende tu producto y habla por ti.',
     ob_product_btn: 'Continuar →',
     ob_product_skip: 'Saltar por ahora',
     ob_tone_title: '¿Cómo quieres sonar?',
-    ob_tone_sub: 'Tu tono personal. Puedes cambiarlo en ajustes.',
+    ob_tone_sub: 'Tú tienes el estilo. CloserAI lo amplifica.',
     ob_tone_btn: 'Todo listo →',
     ob_ready_title: '¡Estás listo para cerrar!',
-    ob_ready_sub: 'Configuración guardada. CloserAI ya conoce tu producto y tu estilo.',
-    ob_ready_btn: 'Empezar a cerrar →',
+    ob_ready_sub: 'Todo configurado. CloserAI ya sabe cómo eres y qué vendes.',
+    ob_ready_btn: 'Abrir CloserAI →',
     // Home
     home_streak: '🔥 días',
     home_this_month: 'Este mes',
@@ -2065,7 +2065,7 @@ var T = {
     prod_once_t: 'Configuración única',
     prod_once_s: 'Se aplica automáticamente en todas tus respuestas',
     prod_desc_label: 'Descripción del producto',
-    prod_desc_placeholder: 'Ej: Vendo cursos de fotografía por $297. Mi cliente ideal tiene 25–40 años. La objeción más común es el precio. Mi diferencial es mentoría grupal incluida...',
+    prod_desc_placeholder: 'Sube fotos, comparte tus redes o escribe aquí. CloserAI usará este contexto para personalizar cada respuesta.',
     prod_files_label: 'Archivos de referencia',
     prod_img: 'Imagen', prod_pdf: 'PDF', prod_add: 'Agregar',
     prod_link_label: 'Link de tu web o redes',
@@ -2106,32 +2106,59 @@ var T = {
     ss_sub: 'CloserAI lee la conversación y te dice exactamente qué responder.',
     ss_result_label: '✨ Respuesta sugerida',
     ss_analyze: '🤖 Analizar con CloserAI',
+    // Onboarding full titles
+    ob_welcome_title_full: 'Bienvenido a <em>Closer AI</em>',
+    ob_proof_title_full: 'Vendedores que ya <em>cierran más</em>',
+    ob_product_title_full: 'Tu <em>producto</em>, una vez',
+    ob_tone_title_full: '¿Cómo quieres <em>sonar?</em>',
+    ob_ready_title_full: '¡Estás <em>listo</em> para cerrar!',
+    ob_stat_title: 'Más cierres en el primer mes',
+    ob_stat_sub: 'Promedio de usuarios activos en CloserAI',
+    ob_t1_quote: 'Tenía clientes esperando respuesta y yo sin saber qué ponerles. Ahora les respondo al tiro y cierro.',
+    ob_t1_role: 'Valentina R. · Tienda de ropa · Instagram',
+    ob_t2_quote: 'Atiendo como 20 pedidos al día. CloserAI me ahorra horas. Ya no improviso cada respuesta.',
+    ob_t2_role: 'Agencia de ventas · WhatsApp',
+    ob_check1_title: 'Producto listo',
+    ob_check1_sub: 'CloserAI sabe exactamente qué ofrecer y cómo',
+    ob_check2_title: 'Tu voz, tu estilo',
+    ob_check2_sub: 'Cada respuesta suena auténtica. Como tú en tu mejor día.',
+    ob_check3_title: 'Listo para cerrar',
+    ob_check3_sub: 'Tu score empieza en cero. Hoy lo cambias.',
+    ob_trial_title: '7 días gratis. Sin compromisos.',
+    ob_trial_sub: 'Sin tarjeta de crédito · Cancela cuando quieras',
+    perfil_em: 'Perfil',
+    prod_em: 'Producto',
+    stats_em: 'Stats',
+    prod_pdf: 'PDF',
+    prod_add: 'Agregar',
+    tone_neu: 'Neutral',
+    tone_mas: 'Masculino',
 
   },
   en: {
     // Onboarding
     ob_welcome_title: 'Welcome to',
-    ob_welcome_sub: 'CloserAI that tells you exactly what to reply to close more sales. Set up once, done forever.',
-    ob_start_btn: 'Start for free →',
-    ob_feat1_title: 'Upload a screenshot',
-    ob_feat1_sub: 'CloserAI reads your chat and generates the perfect reply',
-    ob_feat2_title: 'Improve your reply',
-    ob_feat2_sub: 'Write what you want to say, CloserAI makes it sound incredible',
-    ob_feat3_title: 'Track your closes',
-    ob_feat3_sub: 'Monthly score, XP and streak to keep your momentum',
+    ob_welcome_sub: 'Your personal sales assistant. Writes for you, sounds like you.',
+    ob_start_btn: 'Get started →',
+    ob_feat1_title: 'Read the conversation',
+    ob_feat1_sub: 'Upload the screenshot. CloserAI gets the context and tells you what to say.',
+    ob_feat2_title: 'Improve your message',
+    ob_feat2_sub: 'You have the idea. CloserAI polishes it and makes it sound irresistible.',
+    ob_feat3_title: 'Keep your rhythm',
+    ob_feat3_sub: 'XP, streaks and monthly score. Every close counts.',
     ob_proof_title: 'Sellers already closing more',
-    ob_proof_sub: 'Real results from people like you.',
-    ob_proof_btn: 'I want this →',
+    ob_proof_sub: 'Real sellers.<br>Results that speak for themselves.',
+    ob_proof_btn: 'Continue →',
     ob_product_title: 'Your product, once',
-    ob_product_sub: 'CloserAI uses this info in every reply. You only set it up today.',
+    ob_product_sub: 'Tell us what you sell. CloserAI learns your product and speaks for you.',
     ob_product_btn: 'Continue →',
     ob_product_skip: 'Skip for now',
     ob_tone_title: 'How do you want to sound?',
-    ob_tone_sub: 'Your personal tone. Change it anytime in settings.',
+    ob_tone_sub: 'You have the style. CloserAI amplifies it.',
     ob_tone_btn: 'All set →',
     ob_ready_title: "You're ready to close!",
-    ob_ready_sub: 'Settings saved. AI already knows your product and style.',
-    ob_ready_btn: 'Start closing →',
+    ob_ready_sub: 'All set. CloserAI already knows who you are and what you sell.',
+    ob_ready_btn: 'Open CloserAI →',
     // Home
     home_streak: '🔥 days',
     home_this_month: 'This month',
@@ -2177,7 +2204,7 @@ var T = {
     prod_once_t: 'One-time setup',
     prod_once_s: 'Applied automatically to all your replies',
     prod_desc_label: 'Product description',
-    prod_desc_placeholder: 'Ex: I sell photography courses for $297. My ideal client is 25–40 years old. The most common objection is price. My differentiator is included group mentoring...',
+    prod_desc_placeholder: 'Upload photos, share your socials or write here. CloserAI will use this context to personalize every reply.',
     prod_files_label: 'Reference files',
     prod_img: 'Image', prod_pdf: 'PDF', prod_add: 'Add',
     prod_link_label: 'Your website or social media',
@@ -2218,6 +2245,34 @@ var T = {
     ss_sub: 'CloserAI reads the conversation and tells you exactly what to reply.',
     ss_result_label: '✨ Suggested reply',
     ss_analyze: '🤖 Analyze with CloserAI',
+    // Onboarding full titles
+    ob_welcome_title_full: 'Welcome to <em>Closer AI</em>',
+    ob_proof_title_full: 'Sellers already <em>closing more</em>',
+    ob_product_title_full: 'Your <em>product</em>, once',
+    ob_tone_title_full: 'How do you want to <em>sound?</em>',
+    ob_ready_title_full: "You're <em>ready</em> to close!",
+    ob_stat_title: 'More closes in the first month',
+    ob_stat_sub: 'Average for active CloserAI users',
+    ob_t1_quote: 'I had clients waiting and I had no idea what to say. Now I reply instantly and close.',
+    ob_t1_role: 'Valentina R. · Clothing store · Instagram',
+    ob_t2_quote: 'I handle about 20 orders a day. CloserAI saves me hours. No more winging every reply.',
+    ob_t2_role: 'Andrés M. · Ecom store · WhatsApp',
+    ob_check1_title: 'Product ready',
+    ob_check1_sub: 'CloserAI knows exactly what to offer and how',
+    ob_check2_title: 'Your voice, your style',
+    ob_check2_sub: 'Every reply sounds authentic. Like you on your best day.',
+    ob_check3_title: 'Ready to close',
+    ob_check3_sub: 'Your score starts at zero. Today you change that.',
+    ob_trial_title: '7 days free. No strings.',
+    ob_trial_sub: 'No credit card required · Cancel anytime',
+    perfil_em: 'Profile',
+    prod_em: 'Product',
+    stats_em: 'Stats',
+    prod_pdf: 'PDF',
+    prod_add: 'Add',
+    tone_neu: 'Neutral',
+    tone_mas: 'Masculine',
+
 
   }
 };
