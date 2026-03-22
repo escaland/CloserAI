@@ -87,11 +87,12 @@ body {
 
 .phone {
   width:100%;
-  min-height:100vh;
+  height:100vh;
   background:var(--bg);
   position:relative;
   display:flex;
   flex-direction:column;
+  overflow:hidden;
 }
 
 /* ── SCREENS ── */
@@ -338,18 +339,16 @@ body {
 .btn-ghost:hover { color:var(--text2); }
 
 .phone {
-  width:390px;
+  width:100%;
   background:var(--bg);
-  border-radius:44px;
-  overflow:hidden;
   position:relative;
-  box-shadow: none;
-  border-radius: 0;
-  width: 100%;
-  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  overflow:hidden;
 }
 
-.inner { position:relative; z-index:1; display:flex; flex-direction:column; flex:1; overflow-y:auto; overflow-x:hidden; padding:0; }
+.inner { position:relative; z-index:1; display:flex; flex-direction:column; flex:1; overflow-y:auto; overflow-x:hidden; padding:0 0 16px 0; }
 
 /* ── HEADER ── */
 .hdr {
@@ -582,15 +581,15 @@ body {
 .ctabtn:active { transform:translateY(4px); box-shadow: 0 8px 24px rgba(85,0,255,0.18); }
 
 /* ── NAVBAR — Island Minimal ── */
-.nav, .tab-nav {
+.nav {
+  position:fixed;
+  bottom:0; left:0; right:0;
   display:flex; justify-content:space-around; align-items:flex-start;
   padding:12px 8px 36px;
   border-top:1px solid var(--border2);
   background:var(--card);
-  flex-shrink:0;
+  z-index:100;
   width:100%;
-  position:relative;
-  z-index:10;
 }
 .nav-island { display:contents; } /* unused */
 .ni {
@@ -804,9 +803,11 @@ body {
 
 /* ── TAB SCREENS ── */
 .tab-screen {
-  display:none; position:absolute; inset:0;
+  display:none; position:fixed;
+  top:0; left:0; right:0; bottom:80px;
   flex-direction:column; background:var(--bg);
   overflow:hidden;
+  z-index:50;
 }
 .tab-screen.active { display:flex; animation:fadeSlide 0.25s cubic-bezier(0.34,1.1,0.64,1); }
 @keyframes fadeSlide { from{opacity:0;transform:translateX(16px)} to{opacity:1;transform:translateX(0)} }
@@ -1588,6 +1589,7 @@ body {
     </div>
 
     <button class="ctabtn" onclick="showCel()" data-i18n="home_cta">🎯 ¡Cerré una venta!</button>
+    <div style="height:100px; flex-shrink:0;"></div>
 
 
 
@@ -1748,12 +1750,7 @@ body {
 
       <button class="save-btn" data-i18n="prod_save">Guardar cambios ✓</button>
     </div>
-    <div class="tab-nav">
-      <div class="ni" onclick="showTab('inicio')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gi" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M10.707 2.293a1 1 0 0 1 1.414 0l7 7 2 2a1 1 0 0 1-1.414 1.414L20 12.414V20a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4h-4v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7.586l-.707.707A1 1 0 0 1 1.879 11.707l2-2 7-7z" fill="url(#gi)"/></svg></div></div>
-      <div class="ni" onclick="showTab('stats')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gs" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><rect x="2" y="13" width="4" height="8" rx="1.5" fill="url(#gs)"/><rect x="10" y="8" width="4" height="13" rx="1.5" fill="url(#gs)"/><rect x="18" y="3" width="4" height="18" rx="1.5" fill="url(#gs)"/></svg></div></div>
-      <div class="ni act" onclick="showTab('producto')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gp" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M20 7h-4V5a3 3 0 0 0-6 0v2H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-8-2a1 1 0 0 1 2 0v2h-2V5zm1 10a1 1 0 0 1-1-1v-2a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1z" fill="url(#gp)"/></svg></div></div>
-      <div class="ni" onclick="showTab('perfil')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gu" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5.33 0-8 2.67-8 4v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-1.33-2.67-4-8-4z" fill="url(#gu)"/></svg></div></div>
-    </div>
+
   </div>
 
     <div class="tab-screen" id="tab-stats">
@@ -1817,12 +1814,7 @@ body {
         <div><div class="best-t" data-i18n="stats_best">Mejor mes: Febrero 2026</div><div class="best-s" data-i18n="stats_best_sub">18 ventas cerradas · Récord personal</div></div>
       </div>
     </div>
-    <div class="tab-nav">
-      <div class="ni" onclick="showTab('inicio')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gi" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M10.707 2.293a1 1 0 0 1 1.414 0l7 7 2 2a1 1 0 0 1-1.414 1.414L20 12.414V20a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4h-4v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7.586l-.707.707A1 1 0 0 1 1.879 11.707l2-2 7-7z" fill="url(#gi)"/></svg></div></div>
-      <div class="ni act" onclick="showTab('stats')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gs" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><rect x="2" y="13" width="4" height="8" rx="1.5" fill="url(#gs)"/><rect x="10" y="8" width="4" height="13" rx="1.5" fill="url(#gs)"/><rect x="18" y="3" width="4" height="18" rx="1.5" fill="url(#gs)"/></svg></div></div>
-      <div class="ni" onclick="showTab('producto')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gp" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M20 7h-4V5a3 3 0 0 0-6 0v2H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-8-2a1 1 0 0 1 2 0v2h-2V5zm1 10a1 1 0 0 1-1-1v-2a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1z" fill="url(#gp)"/></svg></div></div>
-      <div class="ni" onclick="showTab('perfil')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gu" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5.33 0-8 2.67-8 4v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-1.33-2.67-4-8-4z" fill="url(#gu)"/></svg></div></div>
-    </div>
+
   </div>
 
     <div class="tab-screen" id="tab-perfil">
@@ -1886,12 +1878,7 @@ body {
 
       <button class="logout-btn" data-i18n="perfil_logout">Cerrar sesión</button>
     </div>
-    <div class="tab-nav">
-      <div class="ni" onclick="showTab('inicio')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gi" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M10.707 2.293a1 1 0 0 1 1.414 0l7 7 2 2a1 1 0 0 1-1.414 1.414L20 12.414V20a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4h-4v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7.586l-.707.707A1 1 0 0 1 1.879 11.707l2-2 7-7z" fill="url(#gi)"/></svg></div></div>
-      <div class="ni" onclick="showTab('stats')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gs" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><rect x="2" y="13" width="4" height="8" rx="1.5" fill="url(#gs)"/><rect x="10" y="8" width="4" height="13" rx="1.5" fill="url(#gs)"/><rect x="18" y="3" width="4" height="18" rx="1.5" fill="url(#gs)"/></svg></div></div>
-      <div class="ni" onclick="showTab('producto')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gp" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M20 7h-4V5a3 3 0 0 0-6 0v2H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-8-2a1 1 0 0 1 2 0v2h-2V5zm1 10a1 1 0 0 1-1-1v-2a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1z" fill="url(#gp)"/></svg></div></div>
-      <div class="ni act" onclick="showTab('perfil')"><div class="nicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="gu" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#5500FF"/></linearGradient></defs><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5.33 0-8 2.67-8 4v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-1.33-2.67-4-8-4z" fill="url(#gu)"/></svg></div></div>
-    </div>
+
   </div>
 
 
@@ -1912,6 +1899,9 @@ body {
       <button class="improve-btn" id="ssBtn" onclick="analyzeScreenshot()">
         <span id="ssBtnText">🤖 Analizar con CloserAI</span>
       </button>
+      <div style="height:100px; flex-shrink:0;"></div>
+      <div style="height:100px; flex-shrink:0;"></div>
+      <div style="height:100px; flex-shrink:0;"></div>
     </div>
   </div>
 
@@ -2398,7 +2388,7 @@ function showTab(name) {
   var tabs = document.querySelectorAll('.tab-screen');
   tabs.forEach(function(t){ t.classList.remove('active'); });
   // Update main nav active state
-  ['inicio','producto','stats','perfil'].forEach(function(n){
+  ['inicio','stats','producto','perfil'].forEach(function(n){
     var el = document.getElementById('nav-'+n);
     if(el) el.classList.toggle('act', n===name);
   });
