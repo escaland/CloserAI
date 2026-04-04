@@ -874,11 +874,64 @@ body {
 
 .prod-section-label { font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--primary-l); margin-bottom:10px; margin-top:20px; opacity:0.8; }
 
-.textarea-card2 { background:var(--card); border:1px solid var(--border2); border-radius:20px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.05); margin-bottom:0; }
-.textarea-card2:focus-within { border-color:rgba(107,47,255,0.5); box-shadow: 0 0 0 3px rgba(107,47,255,0.12); }
-.prod-ta { width:100%; background:transparent; border:none; padding:14px 16px; font-family:'Nunito',sans-serif; font-size:16px; font-weight:600; color:var(--ink); resize:none; height:320px; outline:none; line-height:1.6; }
-.prod-ta::placeholder { color:#C4A8E8; }
+.textarea-card2 {
+  background: var(--card);
+  border: 1.5px solid var(--border2);
+  border-radius: 22px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  margin-bottom: 0;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.textarea-card2:focus-within {
+  border-color: rgba(107,47,255,0.5);
+  box-shadow: 0 0 0 3px rgba(107,47,255,0.1), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.prod-ta {
+  width: 100%; background: transparent; border: none;
+  padding: 16px 18px;
+  font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 500;
+  color: var(--ink); resize: none; height: 160px; outline: none;
+  line-height: 1.65;
+}
+.prod-ta::placeholder { color: var(--text4); font-weight: 400; }
 
+.link-card2 {
+  background: var(--card);
+  border: 1.5px solid var(--border2);
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 12px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.link-card2:focus-within {
+  border-color: rgba(107,47,255,0.5);
+  box-shadow: 0 0 0 3px rgba(107,47,255,0.1);
+}
+.link-in {
+  flex: 1; background: transparent; border: none;
+  font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 600;
+  color: var(--ink); outline: none;
+}
+.link-in::placeholder { color: var(--text4); font-weight: 400; }
+
+.save-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #9B3FFF 0%, #6600FF 50%, #4400DD 100%);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 17px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 0;
+  transition: all 0.2s;
+  box-shadow: 0 8px 24px rgba(85,0,255,0.25), inset 0 1px 0 rgba(255,255,255,0.18);
+  letter-spacing: -0.2px;
+}
+.save-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(85,0,255,0.3); }
+.save-btn:active { transform: scale(0.98); }
 .attach-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
 .attach-card { background:var(--card); border:1px solid var(--border2); border-radius:18px; padding:18px 8px 14px; text-align:center; cursor:pointer; transition:all 0.2s; display:flex; flex-direction:column; align-items:center; gap:8px; }
 .attach-card:hover { border-color:rgba(107,47,255,0.45); background:var(--card2); transform:translateY(-2px); }
@@ -886,14 +939,7 @@ body {
 .attach-card-label { font-size:14px; font-weight:500; color:var(--text3); }
 .add-card { border-style:dashed; }
 
-.link-card2 { background:var(--card); border:1px solid var(--border2); border-radius:16px; padding:12px 16px; display:flex; align-items:center; gap:10px; transition:border-color 0.18s; }
-.link-card2:focus-within { border-color:rgba(107,47,255,0.5); box-shadow:0 0 0 3px rgba(107,47,255,0.1); }
-.link-in { flex:1; background:transparent; border:none; font-family:'Nunito',sans-serif; font-size:16px; font-weight:600; color:var(--ink); outline:none; }
-.link-in::placeholder { color:#C4A8E8; }
-
-.save-btn { width:100%; background:transparent; border:1px solid var(--border2); border-radius:18px; padding:15px; font-family:'Nunito',sans-serif; font-size:17px; font-weight:500; color:var(--primary-l); cursor:pointer; margin-top:22px; transition:all 0.18s; }
-.save-btn:hover { background:rgba(107,47,255,0.08); border-color:rgba(107,47,255,0.3); }
-.save-btn:active { transform:scale(0.98); }
+.link-in::placeholder { color: var(--text4); }
 
 /* STATS TAB */
 .big-stat-card { background:linear-gradient(145deg,#8B3FFF 0%,#5500FF 50%,#3300CC 100%); border:1px solid rgba(255,255,255,0.12); border-radius:28px; padding:24px 22px 20px; box-shadow: 0 12px 40px rgba(85,0,255,0.3), inset 0 1px 0 rgba(255,255,255,0.18); margin-bottom:16px; position:relative; }
@@ -930,7 +976,7 @@ body {
 .user-av-big { width:120px; height:120px; border-radius:50%; background:rgba(255,255,255,0.15); border:3px solid rgba(255,255,255,0.45); display:flex; align-items:center; justify-content:center; font-size:61px; overflow:hidden; transition:opacity 0.15s; }
 .av-wrapper:hover .user-av-big { opacity:0.8; }
 .user-av-big img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
-.av-edit-badge { position:absolute; bottom:-2px; right:-2px; width:20px; height:20px; background:var(--card); border-radius:50%; border:1.5px solid var(--green-dk); display:flex; align-items:center; justify-content:center; font-size:12px; box-shadow:0 1px 4px rgba(0,0,0,0.15); }
+.av-edit-badge { position:absolute; bottom:2px; right:2px; width:16px; height:16px; background:#22c55e; border-radius:50%; border:2.5px solid var(--bg); box-shadow:0 0 0 2px rgba(34,197,94,0.3); }
 .av-hint { font-size:13px; font-weight:600; color:rgba(255,255,255,0.65); margin-top:4px; }
 
 .user-name { font-size:20px; font-weight:600; color:#fff; margin-bottom:5px; letter-spacing:-0.3px; }
@@ -1312,38 +1358,87 @@ body {
   color: transparent;
 }
 
-/* ── MULTI PRODUCT ── */
 .product-card {
-  background:var(--card); border:1px solid var(--border2);
-  border-radius:18px; padding:14px 16px;
-  display:flex; align-items:center; gap:12px;
-  cursor:pointer; transition:all 0.18s;
+  background: var(--card);
+  border: 1.5px solid var(--border2);
+  border-radius: 22px;
+  padding: 15px 18px 15px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34,1.1,0.64,1);
+  position: relative;
+  overflow: hidden;
+}
+.product-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 0.2s;
+}
+.product-card.active::before {
+  background: linear-gradient(180deg, #C084FC, #6600EE);
 }
 .product-card.active {
-  border-color:var(--primary-l);
-  background:rgba(107,47,255,0.08);
+  border-color: rgba(107,47,255,0.3);
+  background: rgba(107,47,255,0.06);
+  box-shadow: 0 4px 20px rgba(107,47,255,0.1);
 }
+.product-card:active { transform: scale(0.985); }
 .product-card-dot {
-  width:10px; height:10px; border-radius:50%;
-  border:2px solid var(--border2); flex-shrink:0; transition:all 0.18s;
+  width: 40px; height: 40px; border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid var(--border2);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  transition: all 0.2s;
 }
 .product-card.active .product-card-dot {
-  background:var(--primary-l); border-color:var(--primary-l);
+  background: rgba(107,47,255,0.12);
+  border-color: rgba(107,47,255,0.35);
 }
-.product-card-name { font-size:15px; font-weight:600; color:var(--text1); flex:1; }
-.product-card-desc { font-size:12px; color:var(--text3); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
-.product-card-actions { display:flex; gap:8px; flex-shrink:0; }
-.product-card-btn { background:transparent; border:none; font-size:16px; cursor:pointer; padding:6px; opacity:0.5; transition:all 0.15s; color:var(--text2); }
-.product-card-btn:hover { opacity:1; color:var(--primary-l); }
+.product-card-name { font-size: 15px; font-weight: 700; color: var(--text1); letter-spacing: -0.2px; }
+.product-card-desc { font-size: 12px; color: var(--text3); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; font-weight: 500; }
+.product-card-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.product-card-btn {
+  width: 34px; height: 34px; border-radius: 11px;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.15s; color: var(--text3);
+}
+.product-card-btn:hover { background: rgba(107,47,255,0.12); border-color: rgba(107,47,255,0.3); color: var(--primary-l); transform: scale(1.05); }
+.product-card-btn:active { transform: scale(0.92); }
+.del-btn:hover { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3); color: #ef4444; }
 
 .add-product-btn {
-  width:100%; background:transparent; border:1.5px dashed var(--border2);
-  border-radius:18px; padding:14px; font-family:'Nunito',sans-serif;
-  font-size:15px; font-weight:500; color:var(--text3); cursor:pointer;
-  display:flex; align-items:center; justify-content:center; gap:8px;
-  transition:all 0.18s;
+  width: 100%;
+  background: transparent;
+  border: 1.5px dashed rgba(107,47,255,0.25);
+  border-radius: 22px;
+  padding: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary-l);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  opacity: 0.65;
 }
-.add-product-btn:hover { border-color:var(--primary-l); color:var(--primary-l); }
+.add-product-btn:hover {
+  border-color: var(--primary-l);
+  background: rgba(107,47,255,0.06);
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(107,47,255,0.12);
+}
 
 /* Product selector in home */
 .prod-selector-wrap { margin-bottom:0; padding:0; }
@@ -1405,13 +1500,19 @@ body {
 .comm-quick-btn:hover { background:rgba(107,47,255,0.15); border-color:var(--primary-l); }
 
 .upload-chip {
-  display:flex; align-items:center; gap:6px;
-  background:var(--card2); border:1px solid var(--border2);
-  border-radius:14px; padding:10px 16px;
-  font-family:'Nunito',sans-serif; font-size:14px; font-weight:500;
-  color:var(--primary-l); cursor:pointer; transition:all 0.15s;
+  display: flex; align-items: center; gap: 7px;
+  background: var(--card);
+  border: 1.5px solid var(--border2);
+  border-radius: 16px;
+  padding: 11px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.18s;
 }
-.upload-chip:hover { background:rgba(107,47,255,0.12); border-color:var(--primary-l); }
+.upload-chip:hover { background: rgba(107,47,255,0.08); border-color: rgba(107,47,255,0.4); color: var(--primary-l); transform: translateY(-1px); }
 .file-thumb {
   position:relative; width:64px; height:64px; border-radius:12px;
   background:var(--card2); border:1px solid var(--border2);
@@ -2115,7 +2216,7 @@ body {
       <div class="crow">
         <div>
           <div class="slbl" data-i18n="home_this_month">Este mes</div>
-          <div class="snum">12<small id="metaDisplay">/20</small></div>
+          <div class="snum" id="homeClosedNum">0<small id="metaDisplay"></small></div>
         </div>
         <div class="card-right">
           <div class="meta-edit-btn" onclick="openMeta()" data-i18n="home_meta_btn">✏️ Meta</div>
@@ -2123,15 +2224,15 @@ body {
         </div>
       </div>
       <div class="bars" id="barsContainer">
-        <div class="b on"></div><div class="b on"></div><div class="b on"></div><div class="b on"></div>
-        <div class="b on"></div><div class="b on"></div><div class="b on"></div><div class="b on"></div>
-        <div class="b on"></div><div class="b on"></div><div class="b on"></div><div class="b on"></div>
-        <div class="b hw"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+        <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+        <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+        <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+        <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
         <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
       </div>
       <div class="cfooter">
-        <span id="metaFooter">Meta: 20 ventas 🎯</span>
-        <span><strong>+3</strong> que el mes pasado</span>
+        <span id="metaFooter">Meta: — 🎯</span>
+        <span id="homeVsLastMonth" style="display:none;"><strong id="homeVsVal"></strong> que el mes pasado</span>
       </div>
     </div>
 
@@ -2144,8 +2245,8 @@ body {
         <div class="comm-strip-val" id="commStripVal">$0</div>
       </div>
       <div class="comm-strip-right">
-        <div class="comm-strip-label">Esta semana</div>
-        <div class="comm-strip-val-sm" id="commStripWeek">$0</div>
+        <div class="comm-strip-label">Meta</div>
+        <div class="comm-strip-val-sm" id="commStripMeta">$0</div>
       </div>
     </div>
 
@@ -2154,7 +2255,7 @@ body {
     <!-- ACTION BUTTONS -->
     <div class="sec" style="margin-bottom:12px;">
       <div class="action-grid">
-        <div class="action-btn" onclick="document.getElementById('screenshotInput').click()">
+        <div class="action-btn" onclick="openAnalyzeScreen()">
           <input type="file" id="screenshotInput" accept="image/*" style="display:none" onchange="handleScreenshot(event)">
           <div class="action-ico-wrap">📸</div>
           <div class="action-text">
@@ -2195,6 +2296,13 @@ body {
         <div class="preset-btn" onclick="setPreset(30)">30</div>
         <div class="preset-btn" onclick="setPreset(50)">50</div>
       </div>
+      <div style="height:1px;background:var(--border2);margin:16px 0;"></div>
+      <div style="font-size:13px;font-weight:600;color:var(--text3);margin-bottom:8px;">Meta de comisiones</div>
+      <div class="meta-input-row">
+        <span style="font-size:20px;font-weight:700;color:var(--text3);">$</span>
+        <input class="meta-input" type="number" id="metaCommInput" placeholder="0" min="0" style="flex:1;">
+        <div class="meta-unit">este mes</div>
+      </div>
       <button class="modal-save" onclick="saveMeta()" data-i18n="meta_save">Guardar meta 🎯</button>
       <button class="modal-cancel" onclick="closeMeta()">Cancelar</button>
     </div>
@@ -2215,7 +2323,7 @@ body {
     </div>
 
     <!-- Scrollable content -->
-    <div style="flex:1;overflow-y:auto;padding:0 20px 160px;">
+    <div style="flex:1;overflow-y:auto;padding:0 20px 20px;">
 
       <!-- Description card — always on top -->
       <div id="imStateIdle" style="margin-bottom:16px;">
@@ -2282,13 +2390,13 @@ body {
 
     </div>
 
-    <!-- Fixed bottom CTA -->
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 20px 44px;background:linear-gradient(transparent,var(--bg) 28%);">
+    <!-- Bottom CTA — fuera del scroll, siempre visible -->
+    <div style="flex-shrink:0;padding:12px 20px;padding-bottom:max(20px, env(safe-area-inset-bottom, 20px));background:var(--bg);border-top:1px solid var(--border2);">
       <button id="imBtn" onclick="runImproveScreen()" style="width:100%;background:linear-gradient(135deg,#9B3FFF 0%,#6600FF 50%,#4400DD 100%);border:1.5px solid rgba(255,255,255,0.12);border-radius:22px;padding:19px;font-family:'Nunito',sans-serif;font-size:19px;font-weight:700;color:#fff;cursor:pointer;letter-spacing:-0.3px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 32px rgba(85,0,255,0.3),inset 0 1px 0 rgba(255,255,255,0.18);transition:all 0.2s;">
         <span id="imBtnIcon">✨</span>
         <span id="imBtnText">Mejorar con CloserAI</span>
       </button>
-      <button id="imRetryBtn" onclick="resetImproveScreen()" style="display:none;width:100%;background:transparent;border:none;padding:12px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:500;color:var(--text3);cursor:pointer;margin-top:4px;">↩ Mejorar de nuevo</button>
+      <button id="imRetryBtn" onclick="resetImproveScreen()" style="display:none;width:100%;background:transparent;border:none;padding:10px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:500;color:var(--text3);cursor:pointer;margin-top:4px;text-align:center;">↩ Mejorar de nuevo</button>
     </div>
   </div>
 
@@ -2360,59 +2468,115 @@ body {
 
   <div class="tab-screen" id="tab-producto">
     <div class="tab-inner">
-      <div class="tab-header">
-        <div class="tab-title"><span data-i18n="prod_title">Tus</span> <span class="tab-em" data-i18n="prod_em">Productos</span></div>
-        <div class="tab-sub">CloserAI usa el producto activo en cada respuesta.</div>
+
+      <!-- HEADER -->
+      <div style="padding-bottom:4px;margin-bottom:20px;">
+        <div style="font-size:28px;font-weight:800;color:var(--text1);letter-spacing:-1px;line-height:1.1;">Tus <span style="background:linear-gradient(130deg,#C084FC,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Productos</span></div>
+        <div style="font-size:14px;color:var(--text3);margin-top:5px;font-weight:500;">CloserAI usa el producto activo para personalizar cada respuesta.</div>
       </div>
 
       <!-- PRODUCT LIST -->
-      <div id="productList" style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;"></div>
+      <div id="productList" style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px;"></div>
 
       <!-- ADD PRODUCT BUTTON -->
-      <button class="add-product-btn" onclick="addProduct()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <button class="add-product-btn" id="addProductBtn" onclick="addProduct()" style="margin-bottom:24px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         Agregar producto
       </button>
 
-      <!-- PRODUCT EDITOR (hidden by default) -->
-      <div id="productEditor" style="display:none;">
-        <div class="prod-section-label" style="margin-top:16px;" id="editorLabel">Nuevo producto</div>
+      <!-- PRODUCT EDITOR -->
+      <div id="productEditor" style="display:none;margin-bottom:24px;">
 
-        <div class="link-card2" style="margin-bottom:10px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" stroke-width="1.5" stroke-linecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          <input class="link-in" type="text" id="prodNameInput" placeholder="Nombre del producto (ej: Curso de fotos)">
+        <!-- Label de sección -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <div style="width:3px;height:18px;border-radius:2px;background:linear-gradient(180deg,var(--primary-l),var(--primary));flex-shrink:0;"></div>
+          <div id="editorLabel" style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);">Nuevo producto</div>
         </div>
 
-        <div class="textarea-card2">
-          <textarea class="prod-ta" id="prodDescInput" style="height:180px" placeholder="Sube fotos, comparte tus redes o escribe aquí. CloserAI usará este contexto para personalizar cada respuesta."></textarea>
+        <!-- Card contenedor -->
+        <div style="background:var(--card);border:1.5px solid var(--border2);border-radius:24px;overflow:hidden;">
+
+          <!-- NOMBRE -->
+          <div style="padding:18px 20px 0;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text4);margin-bottom:8px;">Nombre</div>
+            <div class="link-card2" style="border-radius:14px;padding:13px 16px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" stroke-width="1.5" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input class="link-in" type="text" id="prodNameInput" placeholder="Ej: Curso de fotografía, Consultoría...">
+            </div>
+          </div>
+
+          <!-- DIVIDER -->
+          <div style="height:1px;background:var(--border2);margin:16px 0 0;"></div>
+
+          <!-- QUÉ VENDES -->
+          <div style="padding:16px 20px 0;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text4);margin-bottom:8px;">¿Qué vendes?</div>
+            <div class="textarea-card2" style="border-radius:14px;">
+              <textarea class="prod-ta" id="prodDescInput" placeholder="Describe tu producto, precio, diferencial, objeciones comunes... También puedes subir imágenes o PDF de referencia. Mientras más contexto le des, mejor responde CloserAI."></textarea>
+            </div>
+          </div>
+
+          <!-- DIVIDER -->
+          <div style="height:1px;background:var(--border2);margin:16px 0 0;"></div>
+
+          <!-- ARCHIVOS -->
+          <div style="padding:16px 20px 0;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text4);">Archivos</div>
+              <div style="font-size:11px;color:var(--text4);">opcional</div>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <label class="upload-chip" for="prodImgInput" style="flex:1;justify-content:center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                Imagen
+                <input type="file" id="prodImgInput" accept="image/*" multiple style="display:none" onchange="handleProdFiles(event,'img')">
+              </label>
+              <label class="upload-chip" for="prodPdfInput" style="flex:1;justify-content:center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/></svg>
+                PDF
+                <input type="file" id="prodPdfInput" accept="application/pdf" multiple style="display:none" onchange="handleProdFiles(event,'pdf')">
+              </label>
+            </div>
+            <div id="prodFilePreview" style="display:none;flex-wrap:wrap;gap:8px;margin-top:10px;"></div>
+          </div>
+
+          <!-- DIVIDER -->
+          <div style="height:1px;background:var(--border2);margin:16px 0 0;"></div>
+
+          <!-- LINK -->
+          <div style="padding:16px 20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text4);">Web o redes</div>
+              <div style="font-size:11px;color:var(--text4);">opcional</div>
+            </div>
+            <div class="link-card2" style="border-radius:14px;padding:13px 16px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" stroke-width="1.5" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              <input class="link-in" type="url" id="prodLinkInput" placeholder="instagram.com/tunegocio">
+            </div>
+          </div>
+
+        </div><!-- /card contenedor -->
+
+        <!-- BOTONES FUERA DE LA CARD -->
+        <div style="display:flex;gap:10px;margin-top:12px;">
+          <button class="save-btn" style="flex:1;" onclick="saveProduct()">
+            Guardar producto
+          </button>
+          <button onclick="cancelProductEdit()" style="flex:0 0 auto;background:transparent;border:1.5px solid var(--border2);border-radius:18px;padding:0 22px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:var(--text3);cursor:pointer;transition:all 0.15s;height:57px;">Cancelar</button>
         </div>
 
-        <div class="prod-section-label" style="margin-top:14px;">Archivos del producto</div>
-        <div style="font-size:12px;color:var(--text3);margin-bottom:10px;">Sube fotos o PDF. CloserAI los analiza y mejora las respuestas automáticamente.</div>
-        <div style="display:flex;gap:8px;margin-bottom:14px;">
-          <label class="upload-chip" for="prodImgInput">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-            Imagen
-            <input type="file" id="prodImgInput" accept="image/*" multiple style="display:none" onchange="handleProdFiles(event,'img')">
-          </label>
-          <label class="upload-chip" for="prodPdfInput">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
-            PDF
-            <input type="file" id="prodPdfInput" accept="application/pdf" multiple style="display:none" onchange="handleProdFiles(event,'pdf')">
-          </label>
-        </div>
-        <div id="prodFilePreview" style="display:none;flex-wrap:wrap;gap:8px;margin-bottom:14px;"></div>
+      </div><!-- /productEditor -->
 
-        <div class="prod-section-label">Link de tu web o redes</div>
-        <div class="link-card2">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text4)" stroke-width="1.5" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          <input class="link-in" type="url" id="prodLinkInput" placeholder="Tu web o red social">
-        </div>
-
-        <div style="display:flex;gap:10px;margin-top:16px;">
-          <button class="save-btn" style="flex:1;margin-top:0;" onclick="saveProduct()">Guardar ✓</button>
-          <button onclick="cancelProductEdit()" style="flex:0 0 auto;background:transparent;border:1px solid var(--border2);border-radius:18px;padding:15px 20px;font-family:'Nunito',sans-serif;font-size:15px;color:var(--text3);cursor:pointer;">Cancelar</button>
-        </div>
+      <!-- HISTORIAL DE RESPUESTAS -->
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+        <div style="width:3px;height:18px;border-radius:2px;background:linear-gradient(180deg,var(--primary-l),var(--primary));flex-shrink:0;"></div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);">Historial de respuestas</div>
+      </div>
+      <div id="responseHistoryList" style="display:flex;flex-direction:column;gap:10px;"></div>
+      <div id="responseHistoryEmpty" style="display:none;background:var(--card);border:1.5px dashed rgba(107,47,255,0.2);border-radius:22px;padding:32px 20px;text-align:center;">
+        <div style="font-size:34px;margin-bottom:10px;">💬</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text1);margin-bottom:5px;">Sin respuestas aún</div>
+        <div style="font-size:13px;color:var(--text3);line-height:1.6;">Cada mensaje que generes con CloserAI<br>aparecerá aquí. Las últimas 10.</div>
       </div>
 
       <div style="height:100px;flex-shrink:0;"></div>
@@ -2544,24 +2708,24 @@ body {
           <div class="big-stat-row">
             <div>
               <div class="big-stat-lbl" data-i18n="stats_closed">Ventas cerradas</div>
-              <div class="big-stat-num">12<small>/20</small></div>
+              <div class="big-stat-num" id="statsClosedNum">0<small id="statsClosedMeta">/0</small></div>
             </div>
-            <div class="big-stat-badge" data-i18n="stats_badge">+3 vs mes pasado ↑</div>
+            <div class="big-stat-badge" id="statsVsBadge" style="display:none;">+0 vs mes pasado ↑</div>
           </div>
-          <div class="bars" style="margin-bottom:8px">
-            <div class="b on"></div><div class="b on"></div><div class="b on"></div><div class="b on"></div>
-            <div class="b on"></div><div class="b on"></div><div class="b on"></div><div class="b on"></div>
-            <div class="b on"></div><div class="b on"></div><div class="b on"></div><div class="b on"></div>
-            <div class="b hw"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+          <div class="bars" style="margin-bottom:8px" id="statsBars">
+            <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+            <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+            <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+            <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
             <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
           </div>
-          <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.6)" data-i18n="stats_pct">60% de la meta alcanzada</div>
+          <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.6)" id="statsPctLabel">0% de la meta alcanzada</div>
         </div>
 
         <div class="mini-grid">
           <div class="mini-card"><div class="mini-ico">✨</div><div class="mini-val" id="mini-streak">0</div><div class="mini-lbl">Respuestas totales</div></div>
-          <div class="mini-card"><div class="mini-ico">📸</div><div class="mini-val" id="mini-ss">34</div><div class="mini-lbl" data-i18n="stats_screenshots">Screenshots</div></div>
-          <div class="mini-card"><div class="mini-ico">✍️</div><div class="mini-val" id="mini-imp">18</div><div class="mini-lbl" data-i18n="stats_improved">Mejoradas</div></div>
+          <div class="mini-card"><div class="mini-ico">📸</div><div class="mini-val" id="mini-ss">0</div><div class="mini-lbl" data-i18n="stats_screenshots">Screenshots</div></div>
+          <div class="mini-card"><div class="mini-ico">✍️</div><div class="mini-val" id="mini-imp">0</div><div class="mini-lbl" data-i18n="stats_improved">Mejoradas</div></div>
         </div>
 
         <div class="prod-section-label" data-i18n="stats_weekly">Cierres por semana — Marzo</div>
@@ -2598,9 +2762,9 @@ body {
           </div>
         </div>
 
-        <div class="best-month" style="margin-top:12px;">
+        <div class="best-month" style="margin-top:12px;" id="bestMonthRow" style="display:none;">
           <span style="font-size:22px">🏆</span>
-          <div><div class="best-t" data-i18n="stats_best">Mejor mes: Febrero 2026</div><div class="best-s" data-i18n="stats_best_sub">18 ventas cerradas · Récord personal</div></div>
+          <div><div class="best-t" id="bestMonthTitle">Mejor mes: —</div><div class="best-s" id="bestMonthSub">Sin datos aún</div></div>
         </div>
       </div>
 
@@ -2618,7 +2782,7 @@ body {
       <div class="user-card">
         <div class="av-wrapper" onclick="triggerPhotoUpload()">
           <div class="user-av-big" id="avatarDisplay">😎</div>
-          <div class="av-edit-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+          <div class="av-edit-badge"></div>
           <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)">
         </div>
         <div>
@@ -2748,16 +2912,58 @@ body {
     </div>
 
     <!-- Scrollable content -->
-    <div style="flex:1; overflow-y:auto; padding:0 20px 160px;">
+    <div style="flex:1; overflow-y:auto; padding:0 20px 20px;">
 
-      <!-- Screenshot preview — hero -->
+      <!-- Upload / Preview area -->
       <div id="asImgWrap" style="
         border-radius:24px; overflow:hidden;
         border:1.5px solid var(--border2);
         margin-bottom:20px; position:relative;
         box-shadow:0 8px 32px rgba(0,0,0,0.25);
-      ">
-        <img id="asPreview" src="" alt="" style="width:100%; display:block; max-height:260px; object-fit:cover;">
+        cursor:pointer;
+      " onclick="if(!asHasImage) document.getElementById('screenshotInput').click()">
+
+        <!-- Drop zone (shown when no image) -->
+        <div id="asDropZone" style="
+          padding:36px 20px;
+          background:var(--card);
+          display:flex; flex-direction:column;
+          align-items:center; justify-content:center; gap:10px;
+          text-align:center;
+        ">
+          <div style="
+            width:60px; height:60px; border-radius:20px;
+            background:rgba(107,47,255,0.12);
+            border:1.5px solid rgba(107,47,255,0.25);
+            display:flex; align-items:center; justify-content:center;
+            font-size:26px;
+          ">📸</div>
+          <div style="font-size:17px;font-weight:700;color:var(--text1);">Subir screenshot</div>
+          <div style="font-size:13px;color:var(--text3);line-height:1.5;">Toca aquí para seleccionar<br>la foto de tu conversación</div>
+          <div style="
+            margin-top:4px;
+            font-size:12px; font-weight:600;
+            color:var(--primary-l);
+            background:rgba(107,47,255,0.1);
+            border:1px solid rgba(107,47,255,0.2);
+            border-radius:20px; padding:6px 16px;
+          ">Elegir foto →</div>
+        </div>
+
+        <!-- Image preview (hidden until image selected) -->
+        <img id="asPreview" src="" alt="" style="width:100%; display:none; max-height:280px; object-fit:cover;">
+
+        <!-- Tap to change overlay (shown on preview) -->
+        <div id="asChangeOverlay" style="
+          display:none; position:absolute; bottom:10px; right:10px;
+          background:rgba(0,0,0,0.55); backdrop-filter:blur(6px);
+          border-radius:12px; padding:6px 12px;
+          font-size:12px; font-weight:600; color:#fff;
+          cursor:pointer;
+        " onclick="event.stopPropagation(); document.getElementById('screenshotInput').click()">
+          📷 Cambiar
+        </div>
+
         <!-- Scan overlay (visible during analysis) -->
         <div id="asScanOverlay" style="
           display:none; position:absolute; inset:0;
@@ -2887,12 +3093,8 @@ body {
       </div>
     </div>
 
-    <!-- Fixed bottom — CTA -->
-    <div style="
-      position:absolute; bottom:0; left:0; right:0;
-      padding:12px 20px 44px;
-      background:linear-gradient(transparent, var(--bg) 28%);
-    ">
+    <!-- Bottom CTA — fuera del scroll, siempre visible -->
+    <div style="flex-shrink:0;padding:12px 20px;padding-bottom:max(20px, env(safe-area-inset-bottom, 20px));background:var(--bg);border-top:1px solid var(--border2);">
       <button id="asAnalyzeBtn" onclick="runAnalyzeAS()" style="
         width:100%;
         background:linear-gradient(135deg,#9B3FFF 0%,#6600FF 50%,#4400DD 100%);
@@ -2908,14 +3110,110 @@ body {
       </button>
       <button id="asRetryBtn" onclick="resetAnalyzeAS()" style="
         display:none; width:100%; background:transparent; border:none;
-        padding:12px; font-family:'Nunito',sans-serif; font-size:15px;
-        font-weight:500; color:var(--text3); cursor:pointer; margin-top:4px;
+        padding:10px; font-family:'Nunito',sans-serif; font-size:15px;
+        font-weight:500; color:var(--text3); cursor:pointer; margin-top:4px; text-align:center;
       ">↩ Analizar otro screenshot</button>
     </div>
   </div>
 
   <!-- CSS for analyze screen -->
   <style>
+/* ── RESPONSE HISTORY ── */
+.rh-card {
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 16px 18px 14px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s;
+}
+.rh-card:active { transform: scale(0.985); }
+.rh-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+.rh-type-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.rh-type-screenshot {
+  background: rgba(107,47,255,0.12);
+  color: var(--primary-l);
+  border: 1px solid rgba(107,47,255,0.2);
+}
+.rh-type-improve {
+  background: rgba(52,211,153,0.1);
+  color: #34D399;
+  border: 1px solid rgba(52,211,153,0.2);
+}
+.rh-product-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text3);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rh-time {
+  font-size: 11px;
+  color: var(--text4);
+  flex-shrink: 0;
+}
+.rh-text {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 11px;
+}
+.rh-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rh-tone-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  padding: 3px 10px;
+}
+.rh-copy-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-l);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rh-copy-btn:active { opacity: 0.6; }
+.rh-accent-line {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+}
+.rh-accent-screenshot { background: linear-gradient(180deg, #9B3FFF, #6600EE); }
+.rh-accent-improve { background: linear-gradient(180deg, #34D399, #059669); }
+
     @keyframes asFadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
     @keyframes scanLine { 0%{background-position:0 -100%} 100%{background-position:0 100%} }
     @keyframes cornerPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
@@ -3151,7 +3449,7 @@ var T = {
     prod_once_t: 'Lo configuras una vez',
     prod_once_s: 'Se aplica solo en todas tus respuestas desde hoy',
     prod_desc_label: 'Cuéntanos qué vendes',
-    prod_desc_placeholder: 'Describe tu producto, precio, diferencial, objeciones comunes... Mientras más contexto le des, mejor responde CloserAI.',
+    prod_desc_placeholder: 'Describe tu producto, precio, diferencial, objeciones comunes... También puedes subir imágenes o PDF de referencia. Mientras más contexto le des, mejor responde CloserAI.',
     prod_files_label: 'Archivos de referencia',
     prod_img: 'Foto', prod_pdf: 'PDF', prod_add: 'Agregar',
     prod_link_label: 'Tu web o redes',
@@ -3290,7 +3588,7 @@ var T = {
     prod_once_t: 'Set it up once',
     prod_once_s: 'Auto-applied to all your replies from now on',
     prod_desc_label: 'What do you sell?',
-    prod_desc_placeholder: 'Describe your product, price, what makes it different, common objections... The more context you give, the better CloserAI replies.',
+    prod_desc_placeholder: 'Describe your product, price, what makes it different, common objections... You can also upload images or PDFs as reference. The more context you give, the better CloserAI replies.',
     prod_files_label: 'Reference files',
     prod_img: 'Photo', prod_pdf: 'PDF', prod_add: 'Add',
     prod_link_label: 'Your website or socials',
@@ -3385,9 +3683,9 @@ function applyTranslations() {
     }
   });
   // Update textarea placeholders
-  var ta = document.querySelector('.prod-ta');
+  var ta = document.getElementById('prodDescInput');
   if (ta) ta.placeholder = t('prod_desc_placeholder');
-  var li = document.querySelector('.link-in');
+  var li = document.getElementById('prodLinkInput');
   if (li) li.placeholder = t('prod_link_placeholder');
   var ia = document.querySelector('.improve-ta');
   if (ia) ia.placeholder = t('improve_placeholder');
@@ -3520,20 +3818,34 @@ function renderProductList() {
   var list = document.getElementById('productList');
   if (!list) return;
   if (products.length === 0) {
-    list.innerHTML = '<div style="text-align:center;color:var(--text4);font-size:14px;padding:20px 0;">A\u00fan no tienes productos. Agrega uno \u2193</div>';
+    list.innerHTML = '<div style="background:var(--card);border:1.5px dashed rgba(107,47,255,0.2);border-radius:22px;padding:32px 20px;text-align:center;">' +
+      '<div style="font-size:36px;margin-bottom:10px;">📦</div>' +
+      '<div style="font-size:15px;font-weight:600;color:var(--text1);margin-bottom:6px;">Sin productos aún</div>' +
+      '<div style="font-size:13px;color:var(--text3);">Agrega tu primer producto y CloserAI responderá con contexto real.</div>' +
+      '</div>';
     return;
   }
+  var emojis = ['📦','🛍️','💼','🏪','🎯','✨','🚀','💡','🎨','🔑'];
   var h = '';
   for (var i = 0; i < products.length; i++) {
     var p = products[i];
     var ac = p.id === activeProductId ? ' active' : '';
-    var ds = p.desc ? escHtml(p.desc.substring(0,60))+(p.desc.length>60?'...':'') : '';
-    h += '<div class="product-card'+ac+'" data-pid="'+escHtml(p.id)+'"><div class="product-card-dot"></div>';
-    h += '<div style="flex:1;min-width:0"><div class="product-card-name">'+escHtml(p.name)+'</div>';
+    var ds = p.desc ? escHtml(p.desc.substring(0,52)) + (p.desc.length > 52 ? '…' : '') : '';
+    var ico = emojis[i % emojis.length];
+    var activeBadge = p.id === activeProductId
+      ? '<span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(135deg,rgba(155,63,255,0.2),rgba(102,0,238,0.15));color:var(--primary-l);border:1px solid rgba(107,47,255,0.3);border-radius:10px;padding:2px 8px;flex-shrink:0;">Activo</span>'
+      : '';
+    h += '<div class="product-card'+ac+'" data-pid="'+escHtml(p.id)+'">';
+    h += '<div class="product-card-dot">'+ico+'</div>';
+    h += '<div style="flex:1;min-width:0;">';
+    h += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:' + (ds ? '3' : '0') + 'px;">';
+    h += '<div class="product-card-name">'+escHtml(p.name)+'</div>' + activeBadge;
+    h += '</div>';
     if (ds) h += '<div class="product-card-desc">'+ds+'</div>';
-    h += '</div><div class="product-card-actions">';
-    h += '<button class="product-card-btn edit-btn" data-pid="'+escHtml(p.id)+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>';
-    h += '<button class="product-card-btn del-btn" data-pid="'+escHtml(p.id)+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button>';
+    h += '</div>';
+    h += '<div class="product-card-actions">';
+    h += '<button class="product-card-btn edit-btn" data-pid="'+escHtml(p.id)+'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>';
+    h += '<button class="product-card-btn del-btn" data-pid="'+escHtml(p.id)+'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></button>';
     h += '</div></div>';
   }
   list.innerHTML = h;
@@ -3642,6 +3954,7 @@ function addProduct() {
   document.getElementById('prodLinkInput').value = '';
   document.getElementById('editorLabel').textContent = 'Nuevo producto';
   document.getElementById('productEditor').style.display = 'block';
+  document.getElementById('addProductBtn').style.display = 'none';
   document.getElementById('prodNameInput').focus();
 }
 
@@ -3654,6 +3967,7 @@ function editProduct(id) {
   document.getElementById('prodLinkInput').value = p.link || '';
   document.getElementById('editorLabel').textContent = 'Editar producto';
   document.getElementById('productEditor').style.display = 'block';
+  document.getElementById('addProductBtn').style.display = 'none';
   document.getElementById('prodNameInput').focus();
 }
 
@@ -3672,12 +3986,14 @@ function saveProduct() {
   }
   saveProducts();
   document.getElementById('productEditor').style.display = 'none';
+  document.getElementById('addProductBtn').style.display = '';
   renderProductList();
   renderProductSelector();
 }
 
 function cancelProductEdit() {
   document.getElementById('productEditor').style.display = 'none';
+  document.getElementById('addProductBtn').style.display = '';
 }
 
 function deleteProduct(id) {
@@ -3821,6 +4137,7 @@ function saveCommission() {
   document.getElementById('commModal').classList.remove('show');
   updateCommissionStrip();
   updateCommissionStats();
+  updateXPStats();
   updateCelReward(commission);
   makeConfetti();
   document.getElementById('cel').classList.add('show');
@@ -4009,6 +4326,7 @@ function updateStatsMode() {
   if (commMode) commMode.style.display = commissionsEnabled ? 'block' : 'none';
   if (xpMode) xpMode.style.display = commissionsEnabled ? 'none' : 'block';
   if (commissionsEnabled) updateCommissionStats();
+  updateXPStats();
 }
 
 function updateCommissionStats() {
@@ -4351,6 +4669,87 @@ function checkNoProductReminder() {
     }
   } catch(e) {}
 }
+/* ══ RESPONSE HISTORY ══ */
+var RH_MAX = 10;
+var RH_KEY = 'closer_response_history';
+
+function rhSave(entry) {
+  // entry: { type:'screenshot'|'improve', text, tone, product, ts }
+  try {
+    var history = JSON.parse(localStorage.getItem(RH_KEY) || '[]');
+    history.unshift(entry);
+    if (history.length > RH_MAX) history = history.slice(0, RH_MAX);
+    localStorage.setItem(RH_KEY, JSON.stringify(history));
+  } catch(e) {}
+}
+
+function rhTimeAgo(ts) {
+  var diff = Math.floor((Date.now() - ts) / 1000);
+  if (diff < 60)  return 'ahora';
+  if (diff < 3600) return Math.floor(diff/60) + ' min';
+  if (diff < 86400) return Math.floor(diff/3600) + ' h';
+  return Math.floor(diff/86400) + ' d';
+}
+
+function renderResponseHistory() {
+  try {
+    var list = document.getElementById('responseHistoryList');
+    var empty = document.getElementById('responseHistoryEmpty');
+    if (!list) return;
+    var history = JSON.parse(localStorage.getItem(RH_KEY) || '[]');
+    if (history.length === 0) {
+      list.innerHTML = '';
+      if (empty) empty.style.display = 'block';
+      return;
+    }
+    if (empty) empty.style.display = 'none';
+    list.innerHTML = history.map(function(e, i) {
+      var isScreenshot = e.type === 'screenshot';
+      var typeBadge = isScreenshot
+        ? '<span class="rh-type-badge rh-type-screenshot">📸 Screenshot</span>'
+        : '<span class="rh-type-badge rh-type-improve">✍️ Mejorada</span>';
+      var accentClass = isScreenshot ? 'rh-accent-screenshot' : 'rh-accent-improve';
+      var productTxt = e.product ? e.product : 'Sin producto';
+      var tonePill = e.tone
+        ? '<span class="rh-tone-pill">' + e.tone + '</span>'
+        : '<span class="rh-tone-pill">Sin tono</span>';
+      var escapedText = (e.text || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      return '<div class="rh-card">' +
+        '<div class="rh-accent-line ' + accentClass + '"></div>' +
+        '<div class="rh-card-top">' +
+          typeBadge +
+          '<span class="rh-product-name">📦 ' + productTxt + '</span>' +
+          '<span class="rh-time">' + rhTimeAgo(e.ts) + '</span>' +
+        '</div>' +
+        '<div class="rh-text">' + escapedText + '</div>' +
+        '<div class="rh-footer">' +
+          tonePill +
+          '<button class="rh-copy-btn" onclick="rhCopy(' + i + ')">📋 Copiar</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  } catch(e) {}
+}
+
+function rhCopy(index) {
+  try {
+    var history = JSON.parse(localStorage.getItem(RH_KEY) || '[]');
+    var text = history[index] && history[index].text;
+    if (!text) return;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btns = document.querySelectorAll('#responseHistoryList .rh-copy-btn');
+        if (btns[index]) {
+          btns[index].innerHTML = '✓ Copiado';
+          setTimeout(function() {
+            if (btns[index]) btns[index].innerHTML = '📋 Copiar';
+          }, 2000);
+        }
+      });
+    }
+  } catch(e) {}
+}
+
 function showAvatarToast() {
   var t = document.getElementById('avatarToast');
   t.style.opacity='1';
@@ -4389,6 +4788,7 @@ function showTab(name) {
     mainInner.style.display = 'none';
     var tab = document.getElementById('tab-'+name);
     if(tab) tab.classList.add('active');
+    if(name === 'producto') renderResponseHistory();
   }
 }
 
@@ -4473,22 +4873,27 @@ function saveTone() {
 
 /* META */
 var currentMeta = 20;
-function openMeta() { document.getElementById('metaModal').classList.add('show'); }
+function openMeta() {
+  var cm = localStorage.getItem('closer_comm_meta') || '';
+  var inp = document.getElementById('metaCommInput');
+  if (inp) inp.value = cm ? parseFloat(cm) : '';
+  document.getElementById('metaModal').classList.add('show');
+}
 function closeMeta() { document.getElementById('metaModal').classList.remove('show'); }
 function setPreset(v) { document.getElementById('metaInput').value = v; }
 function saveMeta() {
   var v = parseInt(document.getElementById('metaInput').value) || 20;
   currentMeta = v;
-  document.getElementById('metaDisplay').textContent = '/' + v;
-  document.getElementById('metaFooter').textContent = 'Meta: ' + v + ' ventas 🎯';
-  var c = document.getElementById('barsContainer'); c.innerHTML = '';
-  var total = Math.min(v, 30);
-  for (var i = 0; i < total; i++) {
-    var d = document.createElement('div');
-    d.className = 'b' + (i < 12 ? ' on' : (i === 12 ? ' hw' : ''));
-    c.appendChild(d);
+  try { localStorage.setItem('closer_meta', v); } catch(e) {}
+  var commMetaInput = document.getElementById('metaCommInput');
+  if (commMetaInput) {
+    var cm = parseFloat(commMetaInput.value) || 0;
+    try { localStorage.setItem('closer_comm_meta', cm); } catch(e) {}
+    var strip = document.getElementById('commStripMeta');
+    if (strip) strip.textContent = formatMoney(cm);
   }
   closeMeta();
+  updateXPStats();
 }
 
 /* ══ IMPROVE SCREEN ══ */
@@ -4549,10 +4954,15 @@ function openImproveScreen() {
   }
 
   document.getElementById('improveScreen').style.display = 'flex';
+  document.getElementById('improveScreen').style.flexDirection = 'column';
+  var nav = document.querySelector('.nav');
+  if (nav) nav.style.display = 'none';
 }
 
 function closeImproveScreen() {
   document.getElementById('improveScreen').style.display = 'none';
+  var nav = document.querySelector('.nav');
+  if (nav) nav.style.display = '';
 }
 
 // Keep legacy alias for home button
@@ -4626,6 +5036,14 @@ async function runImproveScreen() {
     localStorage.setItem('closer_improved', imp + 1);
     var tr = parseInt(localStorage.getItem('closer_total_responses') || '0');
     localStorage.setItem('closer_total_responses', tr + 1);
+    // Save to history
+    rhSave({
+      type: 'improve',
+      text: document.getElementById('imResultText').textContent,
+      tone: imSelectedTone || '',
+      product: imSelectedProd ? (imSelectedProd.name || '') : '',
+      ts: Date.now()
+    });
     updateHomeStats();
   } catch(e) {}
 }
@@ -4679,6 +5097,134 @@ function makeConfetti() {
     c.appendChild(d);
   }
 }
+function updateXPStats() {
+  try {
+    var month = new Date().getMonth();
+    // Ventas cerradas este mes (modo XP: closer_week_M_W, modo comm: closer_closes_M)
+    var closedMonth = 0;
+    for (var w = 1; w <= 4; w++) {
+      closedMonth += parseInt(localStorage.getItem('closer_week_' + month + '_' + w) || '0');
+    }
+    // Comisiones: sincronizar con el strip del home
+    var commMonth = parseFloat(localStorage.getItem('closer_comm_month_' + month) || '0');
+    var periodComm = parseFloat(localStorage.getItem('closer_comm_period') || '0');
+    var displayComm = (currentPeriodStart && currentPeriodEnd) ? periodComm : commMonth;
+    var closesComm = parseInt(localStorage.getItem(
+      (currentPeriodStart && currentPeriodEnd) ? 'closer_closes_period' : ('closer_closes_' + month)
+    ) || '0');
+
+    // Meta
+    var meta = parseInt(localStorage.getItem('closer_meta') || '0');
+
+    // ── HOME SCARD ──
+    var homeNum = document.getElementById('homeClosedNum');
+    var metaDisp = document.getElementById('metaDisplay');
+    var metaFooter = document.getElementById('metaFooter');
+    var homeBars = document.querySelectorAll('#barsContainer .b');
+    if (homeNum) homeNum.childNodes[0].textContent = closedMonth;
+    if (metaDisp) metaDisp.textContent = meta > 0 ? '/' + meta : '';
+    if (metaFooter) metaFooter.textContent = meta > 0 ? 'Meta: ' + meta + ' ventas 🎯' : 'Sin meta — toca ✏️ para fijar una';
+    if (homeBars.length) {
+      var homePct = meta > 0 ? Math.min(closedMonth / meta, 1) : 0;
+      var homeFilled = Math.round(homePct * homeBars.length);
+      homeBars.forEach(function(b, i) {
+        b.classList.toggle('on', i < homeFilled);
+        b.classList.remove('hw');
+        if (i === homeFilled && i < homeBars.length) b.classList.add('hw');
+      });
+    }
+    // Vs mes pasado
+    var prevMonth = month === 0 ? 11 : month - 1;
+    var prevClosed = 0;
+    for (var pw = 1; pw <= 4; pw++) {
+      prevClosed += parseInt(localStorage.getItem('closer_week_' + prevMonth + '_' + pw) || '0');
+    }
+    var vsEl = document.getElementById('homeVsLastMonth');
+    var vsVal = document.getElementById('homeVsVal');
+    if (vsEl && vsVal && prevClosed > 0) {
+      var diff = closedMonth - prevClosed;
+      vsVal.textContent = (diff >= 0 ? '+' : '') + diff;
+      vsEl.style.display = '';
+    } else if (vsEl) {
+      vsEl.style.display = 'none';
+    }
+
+    // Big stat card (ventas cerradas)
+    var closedEl = document.getElementById('statsClosedNum');
+    if (closedEl) {
+      var metaSmall = meta > 0 ? '<small id="statsClosedMeta">/' + meta + '</small>' : '';
+      closedEl.innerHTML = closedMonth + metaSmall;
+    }
+    // Barra de progreso
+    var bars = document.querySelectorAll('#statsBars .b');
+    var pct = meta > 0 ? Math.min(closedMonth / meta, 1) : 0;
+    var filled = Math.round(pct * bars.length);
+    bars.forEach(function(b, i) {
+      b.classList.toggle('on', i < filled);
+      b.classList.remove('hw');
+      if (i === filled && i < bars.length) b.classList.add('hw');
+    });
+    var pctLabel = document.getElementById('statsPctLabel');
+    if (pctLabel) pctLabel.textContent = Math.round(pct * 100) + '% de la meta alcanzada';
+
+    // Sync home scard bars
+    var homeBars = document.querySelectorAll('#barsContainer .b');
+    if (homeBars.length > 0) {
+      var homeFilled = Math.round(pct * homeBars.length);
+      homeBars.forEach(function(b, i) {
+        b.classList.toggle('on', i < homeFilled);
+        b.classList.remove('hw');
+        if (i === homeFilled && i < homeBars.length) b.classList.add('hw');
+      });
+    }
+
+    // Sync home mini-stats
+    var homeStatR = document.getElementById('homeStatResponses');
+    if (homeStatR) homeStatR.textContent = parseInt(localStorage.getItem('closer_total_responses') || '0');
+    var bestWeek = 0;
+    for (var bw = 1; bw <= 4; bw++) {
+      var wc = parseInt(localStorage.getItem('closer_week_' + month + '_' + bw) || '0');
+      if (wc > bestWeek) bestWeek = wc;
+    }
+    var homeStatBW = document.getElementById('homeStatBestWeek');
+    if (homeStatBW) homeStatBW.textContent = bestWeek;
+
+    // Sync home scard
+    var homeNum = document.getElementById('homeClosedNum');
+    var metaVal = meta > 0 ? '/' + meta : '';
+    if (homeNum) homeNum.innerHTML = closedMonth + '<small id="metaDisplay">' + metaVal + '</small>';
+    var metaFooter = document.getElementById('metaFooter');
+    if (metaFooter) metaFooter.textContent = meta > 0 ? 'Meta: ' + meta + ' ventas 🎯' : 'Sin meta definida';
+
+    // Sync statsBigComm (modo comisiones en stats)
+    var bigComm = document.getElementById('statsBigComm');
+    if (bigComm) bigComm.textContent = formatMoney(displayComm);
+    var footer = document.getElementById('statsCommFooter');
+    if (footer) footer.textContent = closesComm + ' venta' + (closesComm !== 1 ? 's' : '') + ' registrada' + (closesComm !== 1 ? 's' : '');
+
+    // Sync commStrip (home)
+    var mv = document.getElementById('commStripVal');
+    if (mv) mv.textContent = formatMoney(displayComm);
+
+    // Best month — guardar si este mes es el récord
+    var bestMonth = parseInt(localStorage.getItem('closer_best_month_closes') || '0');
+    var bestMonthIdx = parseInt(localStorage.getItem('closer_best_month_idx') || '-1');
+    if (closedMonth > bestMonth) {
+      localStorage.setItem('closer_best_month_closes', closedMonth);
+      localStorage.setItem('closer_best_month_idx', month);
+      bestMonth = closedMonth;
+      bestMonthIdx = month;
+    }
+    var monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    var bmRow = document.getElementById('bestMonthRow');
+    var bmTitle = document.getElementById('bestMonthTitle');
+    var bmSub = document.getElementById('bestMonthSub');
+    if (bmRow) bmRow.style.display = bestMonth > 0 ? 'flex' : 'none';
+    if (bmTitle && bestMonthIdx >= 0) bmTitle.textContent = 'Mejor mes: ' + monthNames[bestMonthIdx] + ' ' + new Date().getFullYear();
+    if (bmSub && bestMonth > 0) bmSub.textContent = bestMonth + ' venta' + (bestMonth !== 1 ? 's' : '') + ' cerrada' + (bestMonth !== 1 ? 's' : '') + ' · Tu récord';
+  } catch(e) {}
+}
+
 function showCel(){
   // If commissions enabled, show capture modal first
   if (commissionsEnabled) {
@@ -4690,6 +5236,7 @@ function showCel(){
       var count = parseInt(localStorage.getItem(key) || '0') + 1;
       localStorage.setItem(key, count);
       updateWeekChart();
+      updateXPStats();
     } catch(e) {}
     return;
   }
@@ -4700,7 +5247,8 @@ function showCel(){
     var count = parseInt(localStorage.getItem(key) || '0') + 1;
     localStorage.setItem(key, count);
     updateWeekChart();
-  } catch(e){}
+    updateXPStats();
+  } catch(e) {}
   makeConfetti(); document.getElementById('cel').classList.add('show'); setTimeout(hideCel,4800);
 }
 
@@ -4729,7 +5277,15 @@ function updateWeekChart() {
   } catch(e){}
 }
 // Load chart on startup
-document.addEventListener('DOMContentLoaded', function(){ updateWeekChart(); updateLangPill(); updateGreeting(); updateHomeStats(); });
+document.addEventListener('DOMContentLoaded', function(){
+  updateWeekChart(); updateLangPill(); updateGreeting(); updateHomeStats(); updateXPStats();
+  // Load commission meta into strip
+  try {
+    var cm = parseFloat(localStorage.getItem('closer_comm_meta') || '0');
+    var strip = document.getElementById('commStripMeta');
+    if (strip) strip.textContent = formatMoney(cm);
+  } catch(e) {}
+});
 function hideCel(){ document.getElementById('cel').classList.remove('show'); }
 
 /* SCREENSHOT */
@@ -4741,7 +5297,22 @@ function handleScreenshot(e) {
   reader.onload = function(ev) {
     var dataUrl = ev.target.result;
     var base64 = dataUrl.split(',')[1];
-    openAnalyzeScreen(base64, mime);
+    // Si la pantalla ya está abierta, solo actualiza la imagen
+    var scr = document.getElementById('analyzeScreen');
+    if (scr && scr.style.display !== 'none') {
+      asImageBase64 = base64;
+      asImageMime = mime;
+      asHasImage = true;
+      var preview = document.getElementById('asPreview');
+      var dropZone = document.getElementById('asDropZone');
+      var changeOverlay = document.getElementById('asChangeOverlay');
+      if (preview) { preview.src = dataUrl; preview.style.display = 'block'; }
+      if (dropZone) dropZone.style.display = 'none';
+      if (changeOverlay) changeOverlay.style.display = 'block';
+      resetAnalyzeAS();
+    } else {
+      openAnalyzeScreen(base64, mime);
+    }
   };
   reader.readAsDataURL(file);
   e.target.value = '';
@@ -4793,17 +5364,35 @@ function copySSResult() {
 var asImageBase64 = null;
 var asImageMime = 'image/jpeg';
 var asToneSelected = 'Amigable';
+var asHasImage = false;
 
 function openAnalyzeScreen(base64, mime) {
-  asImageBase64 = base64;
-  asImageMime = mime || 'image/jpeg';
-  // Update preview
-  document.getElementById('asPreview').src = 'data:' + asImageMime + ';base64,' + base64;
-  // Update product badge
+  if (base64) {
+    // Llamado desde handleScreenshot — cargar imagen
+    asImageBase64 = base64;
+    asImageMime = mime || 'image/jpeg';
+    asHasImage = true;
+    var preview = document.getElementById('asPreview');
+    var dropZone = document.getElementById('asDropZone');
+    var changeOverlay = document.getElementById('asChangeOverlay');
+    if (preview) { preview.src = 'data:' + asImageMime + ';base64,' + base64; preview.style.display = 'block'; }
+    if (dropZone) dropZone.style.display = 'none';
+    if (changeOverlay) changeOverlay.style.display = 'block';
+  } else {
+    // Abierto desde el botón del home — mostrar drop zone vacío
+    asImageBase64 = null;
+    asHasImage = false;
+    var preview = document.getElementById('asPreview');
+    var dropZone = document.getElementById('asDropZone');
+    var changeOverlay = document.getElementById('asChangeOverlay');
+    if (preview) { preview.src = ''; preview.style.display = 'none'; }
+    if (dropZone) dropZone.style.display = 'flex';
+    if (changeOverlay) changeOverlay.style.display = 'none';
+  }
+  // Product badge & pills
   var prod = getActiveProduct();
   var badge = document.getElementById('asProdBadge');
   if (badge) badge.textContent = prod ? (prod.name || 'Producto') : 'Sin producto activo';
-  // Render product pills
   renderFeatureProdPills('asProdPills', 'asNoProdMsg', function() {
     var prod2 = getActiveProduct();
     var badge2 = document.getElementById('asProdBadge');
@@ -4817,10 +5406,12 @@ function openAnalyzeScreen(base64, mime) {
   });
   // Reset state
   resetAnalyzeAS();
-  // Show screen
+  // Show screen, hide nav
   var scr = document.getElementById('analyzeScreen');
   scr.style.display = 'flex';
   scr.style.flexDirection = 'column';
+  var nav = document.querySelector('.nav');
+  if (nav) nav.style.display = 'none';
   void scr.offsetWidth;
 }
 
@@ -4836,6 +5427,8 @@ function closeAnalyzeScreen() {
     scr.style.transform = '';
     scr.style.transition = '';
     scr.style.animation = '';
+    var nav = document.querySelector('.nav');
+    if (nav) nav.style.display = '';
   }, 200);
 }
 
@@ -4864,7 +5457,19 @@ var asLoadingSteps = [
 ];
 
 async function runAnalyzeAS() {
-  if (!asImageBase64) return;
+  if (!asImageBase64) {
+    // Resaltar el drop zone para indicar que falta la imagen
+    var dropZone = document.getElementById('asDropZone');
+    if (dropZone) {
+      dropZone.style.border = '2px solid var(--primary-l)';
+      dropZone.style.background = 'rgba(107,47,255,0.08)';
+      setTimeout(function() {
+        dropZone.style.border = '';
+        dropZone.style.background = '';
+      }, 1200);
+    }
+    return;
+  }
   // Transition to loading
   document.getElementById('asStateIdle').style.display = 'none';
   document.getElementById('asStateResult').style.display = 'none';
@@ -4940,6 +5545,15 @@ async function runAnalyzeAS() {
       localStorage.setItem('closer_screenshots', ss + 1);
       var tr = parseInt(localStorage.getItem('closer_total_responses') || '0');
       localStorage.setItem('closer_total_responses', tr + 1);
+      // Save to history
+      var activeProd = getActiveProduct();
+      rhSave({
+        type: 'screenshot',
+        text: document.getElementById('asResultText').textContent,
+        tone: asToneSelected || '',
+        product: activeProd ? (activeProd.name || '') : '',
+        ts: Date.now()
+      });
       updateHomeStats();
     } catch(e) {}
 
